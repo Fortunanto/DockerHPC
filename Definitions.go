@@ -19,5 +19,3 @@ type LoggingMiddleware struct{}
 func (LoggingMiddleware) handleMessage(Message) Message {
 	panic("implement me")
 }
-
-
