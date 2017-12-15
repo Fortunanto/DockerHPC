@@ -1,15 +1,16 @@
 package main
 
 import (
-	"github.com/YiftachE/DockerHPC/SourceProducer"
 	"log"
+
+	"github.com/YiftachE/DockerHPC/FileInputReader"
 )
 
 func main() {
-	r, err := SourceProducer.CreateProducer("./SourceProducer/config.yml")
+	r, err := FileInputReader.CreateProducer("./FileInputReader/config.yml")
 	if err != nil {
 		log.Fatal(err)
-	}else{
+	} else {
 		r.Start()
 	}
 }
