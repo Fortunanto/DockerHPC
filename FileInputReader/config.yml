@@ -1,0 +1,13 @@
+rabbitConnectionString: amqp://rabbitmq:rabbitmq@localhost:5672/
+threadCount: 2
+directories:
+  - path: /home/yiftach/Data
+    queues:
+    - "Pokerface"
+    - "Faceoff"
+#  - reader2:
+#    directory: /home/yiftach/Data
+#    pollingrate: 1
+#  - reader3:
+#    directory: /home/yiftach/Data
+#    pollingrate:  1
