@@ -1,16 +1,10 @@
 rabbitConnectionString: amqp://rabbitmq:rabbitmq@localhost:5672/
 threadCount: 2
 directories:
-  - path: /home/yiftach/Data1
-    pollingRate: 1
+  - path: /home/yiftach/Data
     queues:
     - "Pokerface"
     - "Faceoff"
-  - path: /home/yiftach/Data2
-    pollingRate: 1
-    queues:
-    - "Mouse"
-    - "Cat"
 #  - reader2:
 #    directory: /home/yiftach/Data
 #    pollingrate: 1

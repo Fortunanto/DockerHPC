@@ -1,7 +1,8 @@
 version: '3'
 services:
- rabbit1:
+ rabbit:
   image: "rabbitmq:3-management"
+  restart: always
   hostname: "rabbit1"
   environment:
     RABBITMQ_ERLANG_COOKIE: "SWQOKODSQALRPCLNMEQG"
@@ -15,3 +16,16 @@ services:
     NAME: "rabbitmq1"
   volumes:
     - ./RabbitMQ/enabled_plugins:/etc/rabbitmq/enabled_plugins
+ redis:
+  image: "redis:4.0-alpine"
+  restart: always
+  ports:
+    - "6379:6379"
+ redisCommander:
+  image: tenstartups/redis-commander
+  restart: always
+  command: --redis-host redis
+  links:
+    - redis:redis
+  ports:
+    - "8081:8081"
